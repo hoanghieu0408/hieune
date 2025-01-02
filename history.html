@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch xử xem phim</title>
+    <!-- Nhúng thư viện icon -->
+    <link rel="stylesheet" href="asset/fontawesome/css/all.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- link css -->
+     <link rel="stylesheet" href="asset/main.css">
+     <!-- inport font chữ -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href=
+     "https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&
+     family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inder&family=Montserrat:ital,
+     wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,
+     900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,
+     900&family=Sawarabi+Gothic&family=Sawarabi+Mincho&family=Shippori+Mincho&family=Zen+Old+Mincho&display=swap" 
+     rel="stylesheet">
+     <link rel="icon" type="image/x-icon" href="/asset/img/favi_icon.png">
+</head>
+<body>
+    <div class="header">
+        <div class="header_information">
+            <span class="information_logo">
+                <a href="https://www.facebook.com/Zeref.DZ.HTH">
+                    <img src="asset/img/logo.png" alt="">
+                </a>
+            </span>
+            <div class="search_input">
+                <!-- <i class="fas fa-search"></i> -->
+                <input
+                  type="text"
+                  id="filter"
+                  placeholder="Tìm kiếm..."
+                />
+              </div>
+
+            <span class="information_icon">
+                <a onclick="navigateToHistory()" >
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </a>
+                <a>
+                    <i class="fa-solid fa-bookmark"></i>
+                </a>
+                <a>
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                </a>
+            </span>
+            <div class="modol_login tide">
+                <div class="card_login">
+                    <div class="close">
+                        <i class='bx bxs-x-circle'></i>
+                    </div>
+                    <div class="login">
+                        <h3>Đăng nhập</h3>
+                    </div>
+                    <div class="google">
+                        <i class="fa-brands fa-google"></i>
+                        <h5>Đăng nhập bằng Google</h5>
+                    </div>
+                    <input type="text" id="username" name="username" placeholder="Tên tài khoản">
+                    <small class="error-message" id="usernameError"></small> 
+    
+                    <input type="password" id="password" name="password" placeholder="Mật khẩu"> 
+                    <small id="passwordError" class="error-message"></small> 
+    
+                    <div class="checkbox">
+                        <input type="checkbox">
+                        <h5>Ghi nhớ</h5>
+                    </div>
+                    <button class="login_btn">Đăng nhập</button>
+                </div>
+            </div>
+        </div>
+     <div class="header_text">
+                <div class="text">
+                    <h4>Lưu hoặc nhớ ngay link rút gọn </h4>
+                    <h3>3D.onl</h3>
+                    <h4> để truy cập sẽ tự chuyển đến tên miền mới khi nhà mạng chặn</h4>
+                </div>
+     </div>
+        <div class="menu">
+            <div class="Navigation">
+
+                <div class="Navigation_item" onclick="navigateToIndex()" >
+                    <i class="fa-solid fa-house"></i>
+                    <h6>Trang chủ</h6>
+                </div>
+
+
+                <div class="Navigation_item item ">
+                    <h6 class="caret">Thể loại</h6>
+                    <i class="fa-solid fa-caret-down"></i>
+                     <!-- modal category -->
+                 <div class="item_category hide">
+                    <ul>
+                        <li>Huyền huyễn</li>
+                        <li>Xuyên không</li>
+                        <li>Trùng sinh</li>
+                        <li>Tiên hiệp</li>
+                        <li>Cổ trang</li>
+                        <li>Hài hước</li>
+                        <li>Kiếm hiệp</li>
+                    </ul>
+                 </div>
+                </div>
+
+                
+                <div class="Navigation_item">
+                    <h6>Phim Lẻ</h6>
+                </div>
+
+                
+                <div class="Navigation_item">
+                    <i class="fa-solid fa-play"></i>
+                    <h6>Đang Chiếu</h6>
+                </div>
+
+                
+                <div class="Navigation_item">
+                    <i class="fa-regular fa-calendar"></i>
+                    <h6>Lịch Chiếu</h6>
+                </div>
+
+                
+                <div class="Navigation_item">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <h6>Hoàn Thành</h6>
+                </div>
+
+                
+                <div class="Navigation_item">
+                    <i class="fa-regular fa-clock"></i>
+                    <h6>Sắp Chiếu</h6>
+                </div>
+
+                
+                <div class="Navigation_item">
+                    <i class="fa-solid fa-trophy"></i>
+                    <h6>Top 10 HH3D</h6>
+                </div>
+
+                
+                <div class="Navigation_item">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <h6>Đáng Xem</h6>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="viewing_history">
+            <div class="section-bar">
+                <span>
+                    <h5>Lịch sử xem</h5>
+                </span>
+                <h4 class="delete-history-btn" >
+                    Xoá tất cả lịch sử
+                </h4>
+            </div>
+        </div>
+        <div id="confirmation-popup" class="popup hidden">
+            <div class="popup-content">
+                <p>Trang hoạt hình của Hiếu tạo</p>
+                <p>Bạn có chắc chắn muốn xoá hết lịch sử xem phim?</p>
+                <div class="popup-actions">
+                    <button id= "cancel-delete" class="btn btn-danger">Cancel</button>
+                    <button id="confirm-delete" class="btn btn-secondary">Ok</button>
+                </div>
+            </div>
+        </div>
+        <div class="warning-danger">
+            <h4>Chú ý:</h4>
+            <h5>Bạn cần</h5>
+            <h3 class="warning_login">Đăng Nhập</h3>
+            <h5>
+                tài khoản để có thể lưu lịch sử xem phim vào tài khoản của bạn, nếu không lịch sử này sẽ mất khi bạn xóa lịch sử trình duyệt !!!
+            </h5>
+        </div>
+        <div class="Haven_seen_it_yet">
+            Bạn chưa xem bộ phim nào!
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_logo">
+            <img src="asset/img/logo.png" alt="">
+            <a href="https://www.facebook.com/Zeref.DZ.HTH">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </div>
+        <div class="Copyright">
+            <div class="Copyright_text">
+                © Copyright ® 2023 HOATHINH3D.
+            </div>
+        </div>
+
+    <!-- Link javascript -->
+    <script src="asset/app.js"></script>
+</body>
+</html>

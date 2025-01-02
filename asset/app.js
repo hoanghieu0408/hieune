@@ -7,6 +7,10 @@ const itemCategory = document.querySelector('.item_category');
 // Lấy phần tử .Login_to_comment 
 const loginToComment = document.querySelector('.Login_to_comment');
 
+//lấy phần tử .warning_login
+
+const warningLogin = document.querySelector('.warning_login');
+
 // Xử lý sự kiện hover vào phần tử cha
 navigationItem.addEventListener('mouseenter', () => {
     itemCategory.classList.remove('hide'); // Hiển thị .item_category
@@ -34,9 +38,15 @@ if (loginItem) {
     loginItem.addEventListener('click', toggleModal);
 }
 
-// Thêm sự kiện click cho Login_to_comment
+// Thêm sự kiện click cho warning_login
 if (loginToComment) {
     loginToComment.addEventListener('click', toggleModal);
+}
+
+// Thêm sự kiện cick cho .warning_login
+
+if (warningLogin) {
+    warningLogin.addEventListener('click', toggleModal);
 }
 
 // Đóng modal khi nhấn nút close
@@ -227,3 +237,24 @@ function navigateToIndex() {
 function navigateToProduct() {
     window.location.href = "product.html"; // Chuyển hướng đến file product.html
 }
+
+function navigateToHistory() {
+    window.location.href = "history.html"; // Chuyển hướng đến file history.html
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const deleteHistoryBtn = document.querySelector('.delete-history-btn');
+    const confirmationPopup = document.getElementById('confirmation-popup');
+    const cancelDeleteBtn = document.getElementById('cancel-delete');
+    
+    deleteHistoryBtn.addEventListener('click', () => {
+        confirmationPopup.classList.remove('hidden');
+        confirmationPopup.classList.add('visible');
+    });
+
+    cancelDeleteBtn.addEventListener('click', () => {
+        confirmationPopup.classList.remove('visible');
+        confirmationPopup.classList.add('hidden');
+    });
+});
