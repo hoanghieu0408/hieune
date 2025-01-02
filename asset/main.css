@@ -218,7 +218,6 @@ body{
     margin-top: 5px;
     display: flex;
     align-items: center;
-    overflow: auto;
     flex-direction: column;
     background-color: #1F2021;
 }
@@ -1065,7 +1064,7 @@ margin-left: 5px;
 .movie-content {
     background-color: #222;
     color: #fff;
-    padding: 20px;
+    padding-top: 20px;
     border-radius: 10px;
     font-family: Arial, sans-serif;
     width: 1140px;
@@ -1092,7 +1091,7 @@ margin-left: 5px;
 .movie-body {
     color: #fff;
     background-color: #222;
-    padding: 10px;
+    /* padding: 10px; */
     border-radius: 10px;
     width: 1140px;
     margin: auto;
