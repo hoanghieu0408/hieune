@@ -50,6 +50,31 @@
                     <i class="fa-solid fa-right-to-bracket"></i>
                 </a>
             </span>
+            <div class="modol_login tide">
+                <div class="card_login">
+                    <div class="close">
+                        <i class='bx bxs-x-circle'></i>
+                    </div>
+                    <div class="login">
+                        <h3>Đăng nhập</h3>
+                    </div>
+                    <div class="google">
+                        <i class="fa-brands fa-google"></i>
+                        <h5>Đăng nhập bằng Google</h5>
+                    </div>
+                    <input type="text" id="username" name="username" placeholder="Tên tài khoản">
+                    <small class="error-message" id="usernameError"></small> 
+    
+                    <input type="password" id="password" name="password" placeholder="Mật khẩu"> 
+                    <small id="passwordError" class="error-message"></small> 
+    
+                    <div class="checkbox">
+                        <input type="checkbox">
+                        <h5>Ghi nhớ</h5>
+                    </div>
+                    <button class="login_btn">Đăng nhập</button>
+                </div>
+            </div>
         </div>
      <div class="header_text">
                 <div class="text">
@@ -61,7 +86,7 @@
         <div class="menu">
             <div class="Navigation">
 
-                <div class="Navigation_item">
+                <div class="Navigation_item" onclick="navigateToIndex()" >
                     <i class="fa-solid fa-house"></i>
                     <h6>Trang chủ</h6>
                 </div>
@@ -474,31 +499,153 @@
             <h3>Thứ 3</h3>
         </div>
 
-        <div class="Movie_content">
-            <div class="Movie_content_text">
-                <div class="text_content">
-                    <h3>Nội dung phim</h3>
-                </div>
+        <div class="movie-content">
+            <div class="movie-header">
+                <h3 class="movie-title">NỘI DUNG PHIM</h3>
             </div>
-            <div class="Article">
-                <h4>
-                    Xem phim Thôn Phệ Tinh Không Vietsub 2020: 
-                </h4>
-                <h5>
-                    Một ngày nọ, thế giới xuất hiện loại virus RR không rõ lai lịch, cuốn thế giới vào thảm hoạ. Động vật bị truyền nhiễm đột biến thành quái thú đáng sợ, xâm lược với số lượng lớn. Trong lúc loài người đối mặt với diệt vong, họ đã xây lên bức tường bao vây, thành lập căn cứ làm pháo đài cuối cùng bảo vệ con người.
-                    Trong thời gian này, con người nếm trải đủ mọi khó khăn, được gọi là “thời kỳ Đại Niết Bàn”. Trong môi trường sinh tồn cực đoan, bản năng của con người cũng dần phát triển, ngọn gió thượng võ phất lên, tố chất cơ thể con người vượt trội hơn trước. Mà trong những người xuất sắc, được gọi là “chiến binh”. La Phong năm 18 tuổi cũng ước mơ trở thành một trong số họ. Cậu lúc này sắp phải thi đại học, đang đối diện với sự lựa chọn giữa ngã tư đời người. Nhưng lại bị quái thú tấn công ảnh hưởng quỹ đạo cuộc đời của cậu hết lần này đến lần khác.
-                    Dưới uy hiếp của quái thú, cư dân trong thành phố đối diện với nguy hiểm, quân sự lại bó tay. Duy chỉ có chiến binh xông pha, bảo vệ an toàn cho căn cứ. La Phong được những chiến binh truyền cảm hứng, âm thầm hạ quyết tâm trở thành chiến binh bảo vệ người mình yêu thương. Đây chính là khởi đầu của mọi thứ, khởi điểm của  con đường chiến binh La Phong, cũng vén bức màn cuộc đời truyền kì của cậu. La Phong lập chí trở thành chiến binh. Con đường phía không dễ dàng, đầu tiên cậu phải đối diện với môi trường ngoại bộ, vô hình chung càng thêm ảnh hưởng tới cậu. Gia đình La Phong có điều kiện không tốt, cuộc sống túng thiếu, bố mẹ không thể giúp đỡ cậu được nhiều, cậu đành dựa vào nỗ lực của bản thân.
-                    Cuối cùng, dưới sự khổ luyện, La Phong không ngừng khai quật ra tiềm năng của mình, nhận được sự nâng cấp năng lực với sự công nhận giá trị bản thân. Không những vậy, La Phong còn gánh vác gánh nặng nuôi dưỡng  gia đình, cũng vì bảo vệ tổ quốc loài người, vì cuộc sống sinh tồn và phát triển tốt hơn của con người. Cùng với những chiến binh chính nghĩa khác, liên minh đối phó quái thú hung ác. Dưới tình cảnh tận thế, La Phong cùng với những chiến binh khác liệu có thể đẩy lùi quái thú, thành công bảo vệ thế giới loài người?
-                </h5>
+            <div class="movie-body">
+                <h4 class="movie-subtitle">Xem phim Thôn Phệ Tinh Không Vietsub 2020:</h4>
+                <p class="movie-text">
+                    Một ngày nọ, thế giới xuất hiện loại virus RR không rõ lai lịch, cuốn thế giới vào thảm hoạ. Động vật bị truyền nhiễm đột biến thành quái thú đáng sợ, xâm lược với số lượng lớn. Trong lúc loài người đối mặt với diệt vong, họ đã xây lên bức tường bao vây, thành lập căn cứ làm pháo đài cuối cùng bảo vệ con người...
+                    <span class="more-text hidden">
+                        Trong thời gian này, con người nếm trải đủ mọi khó khăn, được gọi là “thời kỳ Đại Niết Bàn”. Trong môi trường sinh tồn cực đoan, bản năng của con người cũng dần phát triển, ngọn gió thượng võ phất lên, tố chất cơ thể con người vượt trội hơn trước. Mà trong những người xuất sắc, được gọi là “chiến binh”. La Phong năm 18 tuổi cũng ước mơ trở thành một trong số họ. Cậu lúc này sắp phải thi đại học, đang đối diện với sự lựa chọn giữa ngã tư đời người. Nhưng lại bị quái thú tấn công ảnh hưởng quỹ đạo cuộc đời của cậu hết lần này đến lần khác.
+                        Dưới uy hiếp của quái thú, cư dân trong thành phố đối diện với nguy hiểm, quân sự lại bó tay. Duy chỉ có chiến binh xông pha, bảo vệ an toàn cho căn cứ. La Phong được những chiến binh truyền cảm hứng, âm thầm hạ quyết tâm trở thành chiến binh bảo vệ người mình yêu thương. Đây chính là khởi đầu của mọi thứ, khởi điểm của  con đường chiến binh La Phong, cũng vén bức màn cuộc đời truyền kì của cậu. La Phong lập chí trở thành chiến binh. Con đường phía không dễ dàng, đầu tiên cậu phải đối diện với môi trường ngoại bộ, vô hình chung càng thêm ảnh hưởng tới cậu. Gia đình La Phong có điều kiện không tốt, cuộc sống túng thiếu, bố mẹ không thể giúp đỡ cậu được nhiều, cậu đành dựa vào nỗ lực của bản thân.
+                        Cuối cùng, dưới sự khổ luyện, La Phong không ngừng khai quật ra tiềm năng của mình, nhận được sự nâng cấp năng lực với sự công nhận giá trị bản thân. Không những vậy, La Phong còn gánh vác gánh nặng nuôi dưỡng  gia đình, cũng vì bảo vệ tổ quốc loài người, vì cuộc sống sinh tồn và phát triển tốt hơn của con người. Cùng với những chiến binh chính nghĩa khác, liên minh đối phó quái thú hung ác. Dưới tình cảnh tận thế, La Phong cùng với những chiến binh khác liệu có thể đẩy lùi quái thú, thành công bảo vệ thế giới loài người?
+                    </span>
+                </p>
+                <a class="toggle-btn">Mở rộng...</a>
+                <!-- <a class="compact hidden">Thu gọn</a> -->
             </div>
             <!-- <div class="Extend">
                 <h5>Mở rộng...</h5>
             </div> -->
         </div>
+
+        <div class="Login_to_comment">
+            <button>
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <h5> Đăng nhập để bình luận</h5>
+            </button>
+        </div>
+
+        <div class="HorizontalBorder">
+            <div class="Paragraphs3">
+                <h5>28.3K  Bình luận </h5>
+            </div>
+            <div class="lightning">
+                <div class="lightning_img">
+                    <img src="asset/img/lightning.png" alt="">
+                </div>
+                <div class="Latest" onclick="toggleSortMenu()" >
+                    <h5>Mới nhất</h5>
+                    <i class='bx bxs-down-arrow'></i>
+                    <ul class="sort hidden">
+                        <li> Cũ nhất</li>
+                        <li> Được bỏ phiếu nhiều nhất </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="View_Comments" id="viewComments" >
+            <button onclick="toggleComments(true)" >
+                <h5>Xem bình luận</h5>
+            </button>
+        </div>
+
+        <div class="comment_list hidden" id="commentList">
+            <div class="Commentatr">
+                <div class="comment_avatar">
+                    <img src="asset/img/avt1.jpeg" alt="">
+                    <h5>Hiếu nè!</h5>
+                </div>
+                <div class="comment_content">
+                    <div class="comment_header">
+                        <h5>:joy::kissing_heart::grinning:</h5>
+                    </div>
+                    <div class="comment_body">
+                        Hiếu không xem phim này
+                    </div>
+                    <div class="comment_footer">
+                        <i class='bx bxs-like'></i>
+                        <h5>1000</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Commentatr">
+                <div class="comment_avatar">
+                    <img src="asset/img/avt1.jpeg" alt="">
+                    <h5>Hiếu nè!</h5>
+                </div>
+                <div class="comment_content">
+                    <div class="comment_header">
+                        <h5>:joy::kissing_heart::grinning:</h5>
+                    </div>
+                    <div class="comment_body">
+                        Hiếu không xem phim này
+                    </div>
+                    <div class="comment_footer">
+                        <i class='bx bxs-like'></i>
+                        <h5>1000</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Commentatr">
+                <div class="comment_avatar">
+                    <img src="asset/img/avt1.jpeg" alt="">
+                    <h5>Hiếu nè!</h5>
+                </div>
+                <div class="comment_content">
+                    <div class="comment_header">
+                        <h5>:joy::kissing_heart::grinning:</h5>
+                    </div>
+                    <div class="comment_body">
+                        Hiếu không xem phim này
+                    </div>
+                    <div class="comment_footer">
+                        <i class='bx bxs-like'></i>
+                        <h5>1000</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="View_Comments hidden" id="hideComments">
+            <button onclick="toggleComments(false)" >
+                <h5>Ẩn bình luận</h5>
+            </button>
+        </div>
+
+        <div class="the_tag_list">
+            <a href="">animehay</a>
+            <a href="">banhtv</a>
+            <a href="">bilutv</a>
+            <a href="">dongphim Thôn Phệ Tinh Không full</a>
+            <a href="">Hoạt Hình Trung Quốc</a>
+            <a href="">Phim Swallowed Star</a>
+            <a href="">Phim Thôn Phệ Tinh Không</a>
+            <a href="">phimbathu</a>
+            <a href="">Swallowed Star</a>
+            <a href="">Swallowed Star online</a>
+            <a href="">Swallowed Star vietsub xem phim Swallowed Star vietsub</a>
+        </div>
+
+        <div class="footer">
+        <div class="footer_logo">
+            <img src="asset/img/logo.png" alt="">
+            <a href="https://www.facebook.com/Zeref.DZ.HTH">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </div>
+        <div class="Copyright">
+            <div class="Copyright_text">
+                © Copyright ® 2023 HOATHINH3D.
+            </div>
+        </div>
     </div>
-
-
-
      <!-- Link javascript -->
      <script src="asset/app.js"></script>
 </body>

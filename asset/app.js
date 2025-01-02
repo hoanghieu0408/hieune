@@ -4,6 +4,9 @@ const navigationItem = document.querySelector('.Navigation_item.item');
 // Lấy phần tử .item_category
 const itemCategory = document.querySelector('.item_category');
 
+// Lấy phần tử .Login_to_comment 
+const loginToComment = document.querySelector('.Login_to_comment');
+
 // Xử lý sự kiện hover vào phần tử cha
 navigationItem.addEventListener('mouseenter', () => {
     itemCategory.classList.remove('hide'); // Hiển thị .item_category
@@ -14,7 +17,7 @@ navigationItem.addEventListener('mouseleave', () => {
     itemCategory.classList.add('hide'); // Ẩn lại .item_category
 });
 
-//Bật tắt modal login
+// Bật tắt modal login
 const loginItem = document.querySelector('.fa-solid.fa-right-to-bracket');
 const modalLogin = document.querySelector('.modol_login');
 const close = document.querySelector('.close');
@@ -26,11 +29,17 @@ function toggleModal() {
     }
 }
 
-// Thêm sự kiện click
+// Thêm sự kiện click cho icon login
 if (loginItem) {
     loginItem.addEventListener('click', toggleModal);
 }
 
+// Thêm sự kiện click cho Login_to_comment
+if (loginToComment) {
+    loginToComment.addEventListener('click', toggleModal);
+}
+
+// Đóng modal khi nhấn nút close
 if (close) {
     close.addEventListener('click', toggleModal);
 }
@@ -139,28 +148,82 @@ updateBanners();
 startAutoSlide();
 
 
-// Lấy phần tử cha chứa danh sách tập
-const listEpisode = document.querySelector('.list_episode');
+// // Lấy phần tử cha chứa danh sách tập
+// const listEpisode = document.querySelector('.list_episode');
 
-// Lấy danh sách tất cả các thẻ số tập và chuyển thành mảng
-const episodes = Array.from(listEpisode.querySelectorAll('.episode_number'));
+// // Lấy danh sách tất cả các thẻ số tập và chuyển thành mảng
+// const episodes = Array.from(listEpisode.querySelectorAll('.episode_number'));
 
-// Lấy số từ nội dung của các thẻ, loại bỏ trùng lặp và sắp xếp giảm dần
-const sortedNumbers = [...new Set(episodes.map(ep => parseInt(ep.textContent.trim(), 10)))]
-    .filter(num => num >= 1) // Loại bỏ số nhỏ hơn 1
-    .sort((a, b) => b - a); // Sắp xếp giảm dần
+// // Lấy số từ nội dung của các thẻ, loại bỏ trùng lặp và sắp xếp giảm dần
+// const sortedNumbers = [...new Set(episodes.map(ep => parseInt(ep.textContent.trim(), 10)))]
+//     .filter(num => num >= 1) // Loại bỏ số nhỏ hơn 1
+//     .sort((a, b) => b - a); // Sắp xếp giảm dần
 
-// Xóa toàn bộ nội dung cũ
-listEpisode.innerHTML = '';
+// // Xóa toàn bộ nội dung cũ
+// listEpisode.innerHTML = '';
 
-// Thêm các thẻ mới với thứ tự giảm dần
-sortedNumbers.forEach(num => {
-    const div = document.createElement('div');
-    div.className = 'episode_number';
-    div.textContent = num;
-    listEpisode.appendChild(div);
+// // Thêm các thẻ mới với thứ tự giảm dần
+// sortedNumbers.forEach(num => {
+//     const div = document.createElement('div');
+//     div.className = 'episode_number';
+//     div.textContent = num;
+//     listEpisode.appendChild(div);
+// });
+
+document.querySelector(".toggle-btn").addEventListener("click", function () {
+    const moreText = document.querySelector(".more-text");
+    const toggleBtn = document.querySelector(".toggle-btn");
+    const compactBtn = document.querySelector(".compact");
+
+    // Hiển thị nội dung và nút "Thu gọn"
+    moreText.classList.remove("hidden");
+    compactBtn.classList.remove("hidden");
+
+    // Ẩn nút "Mở rộng"
+    toggleBtn.classList.add("hidden");
 });
 
-var a = 1;
-var b = 2;
-console.log (a+b)
+document.querySelector(".compact").addEventListener("click", function () {
+    const moreText = document.querySelector(".more-text");
+    const toggleBtn = document.querySelector(".toggle-btn");
+    const compactBtn = document.querySelector(".compact");
+
+    // Ẩn nội dung và nút "Thu gọn"
+    moreText.classList.add("hidden");
+    compactBtn.classList.add("hidden");
+
+    // Hiển thị nút "Mở rộng"
+    toggleBtn.classList.remove("hidden");
+});
+
+
+function toggleSortMenu() {
+    const sortMenu = document.querySelector('.sort');
+    sortMenu.classList.toggle('hidden');
+}
+
+//ẩn hiện bình luận
+
+function toggleComments(show) {
+    const commentList = document.getElementById('commentList');
+    const viewComments = document.getElementById('viewComments');
+    const hideComments = document.getElementById('hideComments');
+
+    if (show) {
+        commentList.classList.remove('hidden'); // Hiển thị danh sách bình luận
+        viewComments.classList.add('hidden');  // Ẩn nút "Xem bình luận"
+        hideComments.classList.remove('hidden'); // Hiển thị nút "Ẩn bình luận"
+    } else {
+        commentList.classList.add('hidden');    // Ẩn danh sách bình luận
+        viewComments.classList.remove('hidden'); // Hiển thị nút "Xem bình luận"
+        hideComments.classList.add('hidden');   // Ẩn nút "Ẩn bình luận"
+    }
+}
+
+function navigateToIndex() {
+    window.location.href = "index.html"; // Chuyển hướng đến file index.html
+}
+
+function navigateToProduct() {
+    window.location.href = "product.html"; // Chuyển hướng đến file product.html
+}
